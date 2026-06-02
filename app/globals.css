@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   CSS VARIABLES — mirror of the Tailwind theme tokens (see tailwind.config.ts).
+   Kept here so raw CSS (gradients, glows) can reference the same palette.
+   ========================================================================== */
+:root {
+  --black: #0a0a0a;
+  --black-soft: #111111;
+  --black-card: #16140f;
+  --gold: #c9a24b;
+  --gold-bright: #e8c766;
+  --gold-deep: #9a7b2e;
+  --ivory: #f5efe0;
+  --ivory-muted: #c9c2b2;
+  --gold-line: rgba(201, 162, 75, 0.28);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchor jumps so the sticky header doesn't cover section tops */
+    scroll-padding-top: 120px;
+  }
+
+  body {
+    background-color: var(--black);
+    color: var(--ivory);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgba(201, 162, 75, 0.3);
+    color: var(--ivory);
+  }
+
+  /* Visible gold focus ring for keyboard users (accessibility) */
+  :focus-visible {
+    outline: 2px solid var(--gold-bright);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* Metallic gold text — used on hero accent words and brand headings */
+  .text-gold-metallic {
+    background: var(--tw-gradient, none);
+    background-image: linear-gradient(
+      135deg,
+      #bf953f 0%,
+      #fcf6ba 35%,
+      #b38728 60%,
+      #fbf5b7 80%,
+      #aa771c 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Thin gold hairline divider that echoes the logo's rule lines */
+  .gold-hairline {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--gold-line) 20%,
+      var(--gold) 50%,
+      var(--gold-line) 80%,
+      transparent 100%
+    );
+  }
+
+  /* Letter-spaced small-caps gold eyebrow label */
+  .eyebrow {
+    @apply font-cinzel uppercase text-gold text-xs sm:text-sm tracking-brand;
+  }
+
+  .section-pad {
+    @apply py-20 sm:py-28 lg:py-32;
+  }
+
+  .container-tmf {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8;
+  }
+}
+
+/* Faint radial glow used behind the hero logo / dark bands */
+.radial-glow {
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 35%,
+    rgba(201, 162, 75, 0.12) 0%,
+    rgba(201, 162, 75, 0) 70%
+  );
+}
+
+/* Respect users who prefer reduced motion: neutralize transitions/animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
