@@ -65,9 +65,13 @@ export default function Footer() {
                   {contact.email}
                 </a>
               </li>
-              <li className="flex items-center gap-3">
-                <MapPin className="h-4 w-4 text-gold" aria-hidden />
-                {contact.location}
+              <li className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden />
+                <span>
+                  {contact.address.line1}
+                  <br />
+                  {contact.address.city}, {contact.address.state} {contact.address.zip}
+                </span>
               </li>
               <li className="flex items-center gap-3">
                 <Clock className="h-4 w-4 text-gold" aria-hidden />

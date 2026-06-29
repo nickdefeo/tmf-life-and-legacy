@@ -41,8 +41,15 @@ export const contact = {
   // Pulled from env when set, otherwise this fallback is used everywhere.
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "admin@tmflife.com",
   // General info shown in the footer (not a contact action).
-  // TODO: confirm office address / service area (or remove if remote-only).
   location: "Serving families nationwide",
+  // Physical office address.
+  address: {
+    line1: "1300 Old Congress Avenue",
+    city: "West Palm Beach",
+    state: "FL",
+    zip: "33409",
+    full: "1300 Old Congress Avenue, West Palm Beach, FL 33409",
+  },
   hours: "We reply Mon–Fri · 9am–7pm ET",
 };
 
