@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
 import { brand, navLinks, cta, contact } from "@/data/site-content";
 import Button from "@/components/ui/Button";
-import Logo from "@/components/ui/Logo";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -36,13 +36,16 @@ export default function Header() {
       }`}
     >
       <div className="container-tmf flex h-28 items-center justify-between">
-        {/* Logo — tree mark + Cormorant wordmark (see components/ui/Logo.tsx) */}
-        <Link
-          href="#top"
-          className="flex items-center text-praxeti"
-          aria-label={brand.name}
-        >
-          <Logo size="md" />
+        {/* Logo — supplied ligature lockup; the <Image> alt names the link */}
+        <Link href="#top" className="flex items-center">
+          <Image
+            src={brand.logo.src}
+            alt={brand.logo.alt}
+            width={brand.logo.width}
+            height={brand.logo.height}
+            className="h-14 w-auto object-contain sm:h-[68px]"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}

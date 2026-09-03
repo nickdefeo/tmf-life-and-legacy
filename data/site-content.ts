@@ -27,11 +27,15 @@ export const brand = {
   name: "TMF Life & Legacy",
   shortName: "TMF",
   tagline: "Protecting What Matters Most.",
-  // The on-page logo is drawn by components/ui/Logo.tsx (inline SVG + text).
-  // These fields feed SEO metadata and JSON-LD only.
+  // Supplied ligature lockup: 668x428 RGBA PNG in Praxeti White + Mantis
+  // green, transparent, built for the site's navy backgrounds. Rendered in the
+  // header and footer, and used for SEO metadata / JSON-LD.
+  // Do not add a background, recolour, crop, or apply shadows or filters.
   logo: {
-    src: "/tmf-mark.svg",
-    alt: "TMF Life & Legacy — green tree mark above the TMF wordmark",
+    src: "/tmf-legacy-ligature-white-green-transparent.png",
+    alt: "TMF Life & Legacy",
+    width: 668,
+    height: 428,
   },
 };
 

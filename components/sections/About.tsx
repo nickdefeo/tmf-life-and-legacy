@@ -14,9 +14,9 @@ export default function About() {
             <Image
               src={brand.logo.src}
               alt={brand.logo.alt}
-              width={750}
-              height={463}
-              className="h-auto w-56 sm:w-72"
+              width={brand.logo.width}
+              height={brand.logo.height}
+              className="h-auto w-56 object-contain sm:w-72"
             />
           </div>
         </Reveal>

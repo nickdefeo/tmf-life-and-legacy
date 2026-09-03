@@ -1,8 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Clock, Phone } from "lucide-react";
 import { brand, navLinks, contact, footer } from "@/data/site-content";
 import Icon from "@/components/ui/Icon";
-import Logo from "@/components/ui/Logo";
 
 export default function Footer() {
   return (
@@ -11,12 +11,14 @@ export default function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr]">
           {/* Brand */}
           <div>
-            <Link
-              href="#top"
-              className="inline-flex items-center text-praxeti"
-              aria-label={brand.name}
-            >
-              <Logo size="md" />
+            <Link href="#top" className="inline-flex items-center">
+              <Image
+                src={brand.logo.src}
+                alt={brand.logo.alt}
+                width={brand.logo.width}
+                height={brand.logo.height}
+                className="h-16 w-auto object-contain"
+              />
             </Link>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-praxeti-muted">
               {footer.blurb}
