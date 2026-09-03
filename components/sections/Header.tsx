@@ -57,8 +57,8 @@ export default function Header() {
               className="group relative whitespace-nowrap text-[13px] text-praxeti-muted transition-colors hover:text-praxeti xl:text-sm"
             >
               {link.label}
-              {/* Animated lime underline */}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-lime transition-all duration-300 group-hover:w-full" />
+              {/* Animated green underline */}
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-mantis-deep transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </nav>
@@ -67,9 +67,9 @@ export default function Header() {
         <div className="hidden items-center gap-2.5 lg:flex">
           <a
             href={`tel:${contact.phone.tel}`}
-            className="mr-1 inline-flex items-center gap-2 whitespace-nowrap text-[13px] font-medium text-praxeti transition-colors hover:text-lime"
+            className="mr-1 inline-flex items-center gap-2 whitespace-nowrap text-[13px] font-medium text-praxeti transition-colors hover:text-mantis"
           >
-            <Phone className="h-4 w-4 text-lime" aria-hidden />
+            <Phone className="h-4 w-4 text-mantis" aria-hidden />
             {contact.phone.display}
           </a>
           <Button
@@ -118,7 +118,7 @@ export default function Header() {
           }`}
         >
           <div className="flex items-center justify-between">
-            <span className="font-sans text-sm font-semibold tracking-[0.2em] text-lime">
+            <span className="font-sans text-sm font-semibold tracking-[0.2em] text-mantis">
               TMF LIFE &amp; LEGACY
             </span>
             <button
@@ -138,7 +138,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-base text-praxeti-muted transition-colors hover:bg-lime/10 hover:text-lime"
+                className="rounded-lg px-3 py-3 text-base text-praxeti-muted transition-colors hover:bg-mantis/15 hover:text-mantis"
               >
                 {link.label}
               </Link>
@@ -149,9 +149,9 @@ export default function Header() {
             <a
               href={`tel:${contact.phone.tel}`}
               onClick={() => setOpen(false)}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-hairline px-7 py-3.5 text-sm font-medium text-praxeti transition-colors hover:border-lime hover:text-lime"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-hairline px-7 py-3.5 text-sm font-medium text-praxeti transition-colors hover:border-mantis hover:text-mantis"
             >
-              <Phone className="h-4 w-4 text-lime" aria-hidden />
+              <Phone className="h-4 w-4 text-mantis" aria-hidden />
               {contact.phone.display}
             </a>
             <Button

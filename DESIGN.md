@@ -1,9 +1,14 @@
 # DESIGN.md — TMF Life & Legacy
 
-A deep-navy, editorial system with restrained green accents. Navy for trust,
-permanence and calm; solid Mantis green for emphasis in type; lime reserved for
-calls to action. Generous negative space, high-contrast serif display type,
-thin green hairline rules.
+A **blue and green** editorial system. Blue carries the ground and structure
+(Midnight Mirage base, Nuit Blanche for elevated bands); green carries every
+accent (solid Mantis for type, icons and borders; Picture Book Green for CTA
+fills). Generous negative space, high-contrast serif display type, thin green
+hairline rules.
+
+**Yellow is held back.** First Colors of Spring `#DBE64C` remains a brand
+colour but is deliberately absent from the UI — no fills, borders or labels.
+Reach for it only as a rare, small highlight.
 
 **Tone: sober, not playful.** This is a life insurance agency. No gradients in
 type, no decorative flourishes, no more than one accent colour in a given
@@ -27,20 +32,21 @@ The six brand colors, plus a few derived navy tints for depth.
 | —                      | `navy-deep`    | `#00152B`               | Footer, overlays, hero vignette      |
 | —                      | `navy-soft`    | `#002A56`               | Alternating section background       |
 | —                      | `navy-card`    | `#0A3061`               | Card surfaces                        |
-| Nuit Blanche           | `navy-mid`     | `#1E488F`               | Elevated bands, mid-tone surfaces    |
+| Nuit Blanche           | `navy-mid`     | `#1E488F`               | Elevated bands — currently the Stats bar |
 | Praxeti White          | `praxeti`      | `#F6F7ED`               | Primary light text, light sections   |
 | —                      | `praxeti-muted`| `#B0C0D4`               | Secondary text on navy               |
-| First Colors of Spring | `lime`         | `#DBE64C`               | CTA fill + borders only — not type   |
+| First Colors of Spring | `lime`         | `#DBE64C`               | **Held in reserve — unused in the UI** |
 | —                      | `lime-bright`  | `#E8F06B`               | Hover / highlight                    |
 | —                      | `lime-deep`    | `#C2CE33`               | Pressed states                       |
-| Mantis                 | `mantis`       | `#74C365`               | **Accent type**, icons, checkmarks   |
-| Picture Book Green     | `mantis-deep`  | `#00804C`               | Badge/pill **surfaces only**         |
+| Mantis                 | `mantis`       | `#74C365`               | **Accent type**, icons, checks, borders |
+| Picture Book Green     | `mantis-deep`  | `#00804C`               | **Primary CTA fill** (white text)    |
+| —                      | `mantis-deeper`| `#006B40`               | CTA hover / pressed                  |
 | —                      | `hairline`     | `rgba(116,195,101,0.30)`| Hairline dividers / card borders     |
 
 **No gradients in type.** Accent words, stat numerals and step numbers are
 **solid `mantis` `#74C365`**. An earlier revision used a lime→mantis gradient
 on text; it read playful, which is wrong for a life insurance agency. Solid
-only. `lime` is reserved for CTA fills and small UI accents.
+only.
 
 ### Contrast — read this before using green as text
 
@@ -48,16 +54,18 @@ Measured against `navy` `#001F3F`:
 
 | Foreground             | Ratio       | Verdict                                  |
 | ---------------------- | ----------- | ---------------------------------------- |
-| `praxeti` `#F6F7ED`    | **15.7:1**  | AAA — body copy                          |
-| `lime` `#DBE64C`       | **12.2:1**  | AAA — and 12.2:1 the other way too       |
-| `mantis` `#74C365`     | **7.8:1**   | AA — icons, checkmarks, small accents    |
+| `praxeti` `#F6F7ED`    | **15.3:1**  | AAA — body copy                          |
+| `praxeti-muted`        | **8.9:1**   | AAA — secondary copy                     |
+| `mantis` `#74C365`     | **7.7:1**   | AA — accent type, icons, borders         |
+| `lime` `#DBE64C`       | **12.2:1**  | passes, but held in reserve — see above   |
 | `mantis-deep` `#00804C`| **3.3:1**   | ❌ **fails AA as text**                  |
 
-- `lime` is the rare accent that works **both** as text on navy and as a fill
-  with navy text on it (the primary button). Navy-on-lime is 12.2:1.
-- **`mantis-deep` (Picture Book Green) must never be used as type on navy.**
-  Use it only as a filled surface with `praxeti` text on it (5.0:1).
-- `navy-mid` (Nuit Blanche) as a surface with `praxeti` text is 8.8:1.
+- **`mantis-deep` (Picture Book Green) must never be used as type.** It is a
+  fill. `praxeti` on it is **4.6:1**, and on `mantis-deeper` (hover) **6.1:1**.
+- ⚠️ **Never put navy text on `mantis-deep` — that is only 3.3:1 and fails AA.**
+  The primary button is Picture Book Green with **Praxeti White** text.
+- `navy-mid` (Nuit Blanche) with `praxeti` is 8.2:1, `praxeti-muted` 4.8:1, and
+  `mantis` 4.1:1 — so on that band, green is for **large text only**.
 
 ## 2. Typography
 
@@ -93,20 +101,22 @@ Measured against `navy` `#001F3F`:
 ## 4. Components
 
 - **Buttons**
-  - _Primary:_ `lime` fill, **navy** text, weight 600, `rounded-full`, soft lime
-    glow on hover (`shadow-lime`), 200–300ms transition, lift on hover.
-  - _Secondary:_ transparent, 1px lime border, lime text; fills faint lime on hover.
-  - _Tertiary / link:_ praxeti text with animated lime underline on hover.
+  - _Primary:_ `mantis-deep` (Picture Book Green) fill, **`praxeti` white**
+    text, weight 600, `rounded-full`, green glow on hover (`shadow-accent`),
+    darkening to `mantis-deeper`, 200–300ms transition, lift on hover.
+  - _Secondary:_ transparent, 1px `mantis` border, `mantis` text; fills faint
+    green on hover.
+  - _Tertiary / link:_ praxeti text with animated green underline on hover.
 - **Cards** — `navy-card` surface, 1px `hairline` border, `rounded-2xl`,
   `shadow-card`; on hover lift `-translate-y-1`, border brightens to `lime`,
-  add `shadow-lime-soft`. Lime line-icon top-left.
+  add `shadow-accent-soft`. Mantis line-icon top-left.
 - **Dividers** — `.accent-hairline` between sections (center-weighted green
   gradient).
-- **Eyebrow label** — Inter 600 caps, `lime`, tracked `0.22em`, followed by a
+- **Eyebrow label** — Inter 600 caps, `mantis`, tracked `0.22em`, followed by a
   short hairline rule.
-- **Inputs** — `navy-soft` fill, 1px `hairline` border, praxeti text, lime
+- **Inputs** — `navy-soft` fill, 1px `hairline` border, praxeti text, `mantis`
   border + glow on focus, `rounded-lg`.
-- **Accordion** — lime `+ / –` indicator, hairline separators, smooth expand.
+- **Accordion** — `mantis` `+ / –` indicator, hairline separators, smooth expand.
 
 ## 5. Motion
 
@@ -116,7 +126,7 @@ Measured against `navy` `#001F3F`:
   ~24px scroll.
 - Stats: count-up when scrolled into view (true value exposed to screen
   readers via `sr-only`, since the animation starts at 0).
-- Hover: button lime glow; card border-highlight + lift; animated lime
+- Hover: button green glow; card border-highlight + lift; animated green
   underline on text links.
 - All transitions 200–300ms ease-out. **Respect `prefers-reduced-motion`** —
   disable transforms/animations.
@@ -171,5 +181,4 @@ navy rounded tile so it reads on any tab colour), `app/apple-icon.png`
 
 Echo the mark throughout: **laurel leaf curves**, the **four-point star** as a
 small accent, **thin green rule lines**, and a very faint green radial glow
-(`.radial-glow`) behind the hero and on dark CTA bands. Keep lime as an accent,
-never a flood.
+(`.radial-glow`) behind the hero and on dark CTA bands. Keep green as an accent, never a flood.

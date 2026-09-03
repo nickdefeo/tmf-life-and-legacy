@@ -67,7 +67,7 @@ function CountUp({
 
 export default function Stats() {
   return (
-    <section className="border-y border-hairline bg-navy-soft py-14">
+    <section className="border-y border-hairline bg-navy-mid py-14">
       <div className="container-tmf grid grid-cols-1 gap-8 sm:grid-cols-3">
         {stats.map((stat) => (
           <div key={stat.label} className="text-center">

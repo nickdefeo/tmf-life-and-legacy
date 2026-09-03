@@ -9,14 +9,15 @@ const base =
 const sizes = "px-7 py-3.5 text-sm sm:text-base";
 
 const variants: Record<Variant, string> = {
-  // Lime fill, navy text (12.2:1), soft glow on hover (primary client CTA)
+  // Picture Book Green fill, Praxeti White text (5.0:1; 6.2:1 on hover).
+  // Do NOT put navy text on this green — that is only 3.3:1 and fails AA.
   primary:
-    "bg-lime text-navy font-semibold hover:bg-lime-bright hover:shadow-lime hover:-translate-y-0.5",
-  // Lime outline on navy (secondary / agent CTA)
+    "bg-mantis-deep text-praxeti font-semibold hover:bg-mantis-deeper hover:shadow-accent hover:-translate-y-0.5",
+  // Mantis outline on navy (secondary / agent CTA)
   secondary:
-    "border border-lime/70 text-lime hover:bg-lime/10 hover:border-lime hover:shadow-lime-soft hover:-translate-y-0.5",
+    "border border-mantis/70 text-mantis hover:bg-mantis/15 hover:border-mantis hover:shadow-accent-soft hover:-translate-y-0.5",
   // Quiet text link
-  ghost: "text-praxeti-muted hover:text-lime",
+  ghost: "text-praxeti-muted hover:text-mantis",
 };
 
 /**

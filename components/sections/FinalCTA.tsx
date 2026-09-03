@@ -9,7 +9,7 @@ export default function FinalCTA() {
       <div className="radial-glow pointer-events-none absolute inset-0" aria-hidden />
       <div className="container-tmf relative text-center">
         <Reveal>
-          <p className="font-sans text-sm font-semibold uppercase tracking-brand text-lime">
+          <p className="font-sans text-sm font-semibold uppercase tracking-brand text-mantis">
             {finalCta.tagline}
           </p>
           <h2 className="mx-auto mt-5 max-w-3xl font-cormorant text-4xl font-semibold leading-tight text-praxeti sm:text-5xl">

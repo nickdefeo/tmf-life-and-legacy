@@ -17,7 +17,7 @@ export default function WhyTMF() {
           {whyTmf.items.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08}>
               <div className="flex gap-5">
-                <span className="mt-1 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-hairline bg-lime/5 text-lime">
+                <span className="mt-1 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-hairline bg-mantis/10 text-mantis">
                   <Icon name={item.icon} className="h-5 w-5" strokeWidth={1.5} aria-hidden />
                 </span>
                 <div>

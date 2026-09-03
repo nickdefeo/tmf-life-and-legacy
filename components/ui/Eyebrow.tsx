@@ -1,5 +1,5 @@
 /**
- * Wide-tracked lime "eyebrow" label with a short accent rule that echoes the
+ * Wide-tracked green "eyebrow" label with a short accent rule that echoes the
  * logo's baseline rule. Sits above section headings.
  */
 export default function Eyebrow({

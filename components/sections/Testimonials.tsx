@@ -16,7 +16,7 @@ function Stars({ rating }: { rating: number }) {
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
-          className={`h-4 w-4 ${i < rating ? "fill-lime text-lime" : "text-lime/25"}`}
+          className={`h-4 w-4 ${i < rating ? "fill-mantis text-mantis" : "text-mantis/25"}`}
           aria-hidden
         />
       ))}
@@ -28,7 +28,7 @@ function Card({ item, delay }: { item: Item; delay: number }) {
   return (
     <Reveal delay={delay}>
       <figure className="flex h-full flex-col rounded-2xl border border-hairline bg-navy-card p-8 shadow-card">
-        <Quote className="h-8 w-8 text-lime/50" aria-hidden />
+        <Quote className="h-8 w-8 text-mantis/50" aria-hidden />
         <blockquote className="mt-4 flex-1 font-cormorant text-xl italic leading-relaxed text-praxeti">
           “{item.quote}”
         </blockquote>
@@ -42,7 +42,7 @@ function Card({ item, delay }: { item: Item; delay: number }) {
   );
 }
 
-/** Small lime label that groups testimonials by audience. */
+/** Small green label that groups testimonials by audience. */
 function GroupLabel({ children }: { children: React.ReactNode }) {
   return (
     <div className="mb-6 flex items-center gap-3">

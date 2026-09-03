@@ -20,9 +20,9 @@ export default function Coverage() {
             <Reveal key={item.title} delay={i * 0.08}>
               <Link
                 href={cta.quoteHref}
-                className="group flex h-full flex-col rounded-2xl border border-hairline bg-navy-card p-8 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-lime hover:shadow-lime-soft"
+                className="group flex h-full flex-col rounded-2xl border border-hairline bg-navy-card p-8 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-mantis hover:shadow-accent-soft"
               >
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-hairline bg-lime/5 text-lime transition-colors group-hover:bg-lime/10">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-hairline bg-mantis/10 text-mantis transition-colors group-hover:bg-mantis/15">
                   <Icon name={item.icon} className="h-6 w-6" strokeWidth={1.5} aria-hidden />
                 </span>
                 <h3 className="mt-6 font-cormorant text-2xl font-semibold text-praxeti">
@@ -31,7 +31,7 @@ export default function Coverage() {
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-praxeti-muted">
                   {item.description}
                 </p>
-                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-lime">
+                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-mantis">
                   {coverage.learnMore}
                   <ArrowRight
                     className="h-4 w-4 transition-transform group-hover:translate-x-1"

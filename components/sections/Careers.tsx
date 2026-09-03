@@ -39,8 +39,8 @@ export default function Careers() {
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {careers.offers.map((offer, i) => (
             <Reveal key={offer.title} delay={i * 0.07}>
-              <div className="flex h-full flex-col rounded-2xl border border-hairline bg-navy-card p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-lime hover:shadow-lime-soft">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-hairline bg-lime/5 text-lime">
+              <div className="flex h-full flex-col rounded-2xl border border-hairline bg-navy-card p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-mantis hover:shadow-accent-soft">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-hairline bg-mantis/10 text-mantis">
                   <Icon name={offer.icon} className="h-5 w-5" strokeWidth={1.5} aria-hidden />
                 </span>
                 <h3 className="mt-5 font-cormorant text-xl font-semibold text-praxeti">
@@ -64,7 +64,7 @@ export default function Careers() {
               <ul className="mt-5 space-y-3">
                 {careers.thrive.items.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-praxeti-muted">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-lime" aria-hidden />
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-mantis" aria-hidden />
                     {item}
                   </li>
                 ))}
@@ -73,7 +73,7 @@ export default function Careers() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="flex h-full flex-col justify-center rounded-2xl border border-lime/40 bg-navy-card p-8">
+            <div className="flex h-full flex-col justify-center rounded-2xl border border-mantis/40 bg-navy-card p-8">
               <h3 className="font-cormorant text-2xl font-semibold text-mantis">
                 {careers.promise.heading}
               </h3>
@@ -93,7 +93,7 @@ export default function Careers() {
             {/* TODO: wire up a real agent portal before exposing this link. */}
             <Link
               href={careers.agentLoginHref}
-              className="text-sm text-praxeti-muted underline-offset-4 transition-colors hover:text-lime hover:underline"
+              className="text-sm text-praxeti-muted underline-offset-4 transition-colors hover:text-mantis hover:underline"
             >
               {careers.agentLoginLabel}
             </Link>

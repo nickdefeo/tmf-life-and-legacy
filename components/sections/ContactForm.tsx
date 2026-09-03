@@ -25,7 +25,7 @@ export default function ContactForm() {
         <Reveal>
           <div className="mx-auto mt-14 max-w-xl rounded-2xl border border-hairline bg-navy-card p-10 text-center shadow-card sm:p-12">
             {/* Email icon */}
-            <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-full border border-hairline bg-lime/5 text-lime">
+            <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-full border border-hairline bg-mantis/10 text-mantis">
               <Mail className="h-7 w-7" strokeWidth={1.5} aria-hidden />
             </span>
 
@@ -52,9 +52,9 @@ export default function ContactForm() {
               href={`https://maps.google.com/?q=${encodeURIComponent(contact.address.full)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-start justify-center gap-2 text-sm text-praxeti-muted transition-colors hover:text-lime"
+              className="inline-flex items-start justify-center gap-2 text-sm text-praxeti-muted transition-colors hover:text-mantis"
             >
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-lime" aria-hidden />
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-mantis" aria-hidden />
               <span>
                 {contact.address.line1}, {contact.address.city}, {contact.address.state}{" "}
                 {contact.address.zip}

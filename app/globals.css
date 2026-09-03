@@ -12,11 +12,12 @@
   --navy-soft: #002a56;
   --navy-card: #0a3061;
   --navy-mid: #1e488f; /* Nuit Blanche */
-  --lime: #dbe64c; /* First Colors of Spring */
-  --lime-bright: #e8f06b;
-  --lime-deep: #c2ce33;
-  --mantis: #74c365;
-  --mantis-deep: #00804c; /* Picture Book Green — surfaces only */
+  --mantis: #74c365; /* Mantis — accent type, icons, borders */
+  --mantis-deep: #00804c; /* Picture Book Green — primary CTA fill */
+  --mantis-deeper: #006b40; /* CTA hover / pressed */
+  /* First Colors of Spring — retained brand colour, held out of the UI.
+     The scheme leads with blue and green. */
+  --lime: #dbe64c;
   --praxeti: #f6f7ed; /* Praxeti White */
   --praxeti-muted: #b0c0d4;
   --hairline: rgba(116, 195, 101, 0.3);
@@ -37,13 +38,13 @@
   }
 
   ::selection {
-    background: rgba(219, 230, 76, 0.3);
+    background: rgba(116, 195, 101, 0.32);
     color: var(--praxeti);
   }
 
-  /* Visible lime focus ring for keyboard users (accessibility) */
+  /* Visible green focus ring for keyboard users (accessibility) */
   :focus-visible {
-    outline: 2px solid var(--lime);
+    outline: 2px solid var(--mantis);
     outline-offset: 2px;
     border-radius: 2px;
   }
@@ -64,9 +65,9 @@
     );
   }
 
-  /* Letter-spaced wide-tracked lime eyebrow label */
+  /* Letter-spaced wide-tracked green eyebrow label */
   .eyebrow {
-    @apply font-sans text-xs font-semibold uppercase tracking-brand text-lime sm:text-sm;
+    @apply font-sans text-xs font-semibold uppercase tracking-brand text-mantis sm:text-sm;
   }
 
   .section-pad {

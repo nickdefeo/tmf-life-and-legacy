@@ -27,14 +27,14 @@ export default function FAQ() {
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                     onClick={() => setOpen(isOpen ? null : i)}
-                    className="flex w-full items-center justify-between gap-4 py-5 text-left transition-colors hover:text-lime"
+                    className="flex w-full items-center justify-between gap-4 py-5 text-left transition-colors hover:text-mantis"
                   >
                     <span className="flex items-center gap-3">
                       {/* Audience tag */}
                       <span
                         className={`hidden shrink-0 rounded-full border px-2.5 py-0.5 text-[10px] uppercase tracking-wider sm:inline-block ${
                           item.audience === "agent"
-                            ? "border-lime/40 text-lime"
+                            ? "border-mantis/40 text-mantis"
                             : "border-hairline text-praxeti-muted"
                         }`}
                       >
@@ -44,7 +44,7 @@ export default function FAQ() {
                         {item.q}
                       </span>
                     </span>
-                    <span className="shrink-0 text-lime" aria-hidden>
+                    <span className="shrink-0 text-mantis" aria-hidden>
                       {isOpen ? <Minus className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
                     </span>
                   </button>

@@ -20,7 +20,7 @@ export default function Hero() {
       />
 
       <div className="container-tmf relative z-10 flex flex-col items-center text-center">
-        {/* Headline — middle phrase in the lime→mantis accent gradient */}
+        {/* Headline — middle phrase in solid Mantis green */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ export default function Hero() {
         {/* Quieter link for the second audience (agents) */}
         <Link
           href={hero.agentNudgeHref}
-          className="group mt-6 inline-flex items-center gap-1.5 text-sm text-lime transition-colors hover:text-lime-bright"
+          className="group mt-6 inline-flex items-center gap-1.5 text-sm text-mantis transition-colors hover:text-mantis"
         >
           {hero.agentNudge}
           <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden />
@@ -79,7 +79,7 @@ export default function Hero() {
               key={chip}
               className="flex items-center gap-2 rounded-full border border-hairline bg-navy-card/60 px-4 py-2 text-xs text-praxeti-muted sm:text-sm"
             >
-              <Check className="h-3.5 w-3.5 text-lime" aria-hidden />
+              <Check className="h-3.5 w-3.5 text-mantis" aria-hidden />
               {chip}
             </li>
           ))}

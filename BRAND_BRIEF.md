@@ -40,6 +40,11 @@ trustworthy; decoration reads as inexperience.
 
 ## 2. Colour scheme — LOCKED, do not substitute
 
+**The scheme leads with blue and green.** Blue carries the ground and structure;
+green carries every accent. **Yellow is deliberately held back** — First Colors
+of Spring is a brand colour, but it is not used anywhere in the interface, and
+the logo should not lead with it either.
+
 Six brand colours. These are fixed; the logo must be built from this palette.
 
 | Brand name | Hex | Role |
@@ -47,13 +52,13 @@ Six brand colours. These are fixed; the logo must be built from this palette.
 | **Midnight Mirage** | `#001F3F` | Primary background. The brand's base colour. |
 | **Nuit Blanche** | `#1E488F` | Elevated surfaces, mid-tone bands |
 | **Praxeti White** | `#F6F7ED` | Primary text on navy; light section backgrounds |
-| **First Colors of Spring** | `#DBE64C` | CTA fills and borders **only** — never type |
-| **Mantis** | `#74C365` | Accent type, icons, checkmarks |
-| **Picture Book Green** | `#00804C` | Filled badge/pill surfaces **only** — never type |
+| **Mantis** | `#74C365` | Accent type, icons, borders, checkmarks |
+| **Picture Book Green** | `#00804C` | Primary CTA fill (with white text) — never type |
+| **First Colors of Spring** | `#DBE64C` | **Held in reserve.** A brand colour, but deliberately absent from the UI |
 
 Supporting tints derived for depth (available, not required in the logo):
 `#00152B` deep navy · `#002A56` soft navy · `#0A3061` card navy ·
-`#B0C0D4` muted text · `#E8F06B` lime hover · `#C2CE33` lime pressed
+`#B0C0D4` muted text · `#006B40` CTA hover green
 
 ### Measured contrast — these numbers are the real constraints
 
@@ -64,7 +69,7 @@ Against navy `#001F3F`:
 | Praxeti White `#F6F7ED` | **15.7:1** | AAA |
 | First Colors of Spring `#DBE64C` | **12.2:1** | AAA (both directions) |
 | Mantis `#74C365` | **7.8:1** | AA |
-| Picture Book Green `#00804C` | **3.3:1** | ❌ fails AA as type |
+| Picture Book Green `#00804C` | **3.3:1** | ❌ fails AA as type — it is a **fill**, with white text on it (4.6:1) |
 
 Against Praxeti White `#F6F7ED`:
 
@@ -76,17 +81,19 @@ Against Praxeti White `#F6F7ED`:
 | Mantis `#74C365` | **2.0:1** | ❌ effectively invisible |
 | First Colors of Spring `#DBE64C` | **1.3:1** | ❌ **completely invisible** |
 
-> ⚠️ **The trap that will bite you:** the lime `#DBE64C` is the brand's most
-> recognisable colour and it is *invisible on white* (1.3:1). Any logo built
-> primarily from lime will vanish on letterhead, invoices, a white slide, or a
-> light website section. **The logo needs two colourways** — see §4.
+> ⚠️ **Two reasons not to build the mark from lime.** First, the brand
+> direction: the scheme leads with blue and green, and yellow is held back.
+> Second, the hard one — lime `#DBE64C` is *invisible on white* (1.3:1), so a
+> lime-led mark vanishes on letterhead, invoices, a white slide, or any light
+> section. **Build the mark from blue and green, and supply two colourways** —
+> see §4.
 
 ### Gradients
 
-**None in type.** A previous revision used a lime→Mantis gradient on headlines
-and stat numerals; it was rejected for reading playful. Type is solid colour
-only. The logo should likewise be **flat solid colour** — no gradients, no
-bevels, no drop shadows, no metallic effects.
+**None in type, and none in the mark.** A previous revision used a lime→Mantis
+gradient on headlines and stat numerals; it was rejected for reading playful.
+Type is solid colour only. The logo should likewise be **flat solid colour** —
+no gradients, no bevels, no drop shadows, no metallic effects.
 
 ---
 
@@ -123,8 +130,8 @@ It is currently kept at `public/TMF_logo_original.png` for reference.
 2. **Mark alone** — must be recognisable with no wordmark.
 3. **Favicon / app-icon variant** — a simplified drawing, not a scaled copy.
 4. **Two colourways** (see the contrast tables above):
-   - **On navy:** lime and/or Mantis mark, Praxeti White wordmark.
-   - **On light:** navy and/or Picture Book Green. Lime is unusable here.
+   - **On navy:** Mantis / Picture Book Green mark, Praxeti White wordmark.
+   - **On light:** Midnight Mirage navy and/or Picture Book Green.
 5. **One-colour versions** — solid navy, and solid white (knockout), for fax,
    embroidery, engraving and single-colour print.
 6. **Format: SVG**, flat fills, no embedded raster, no gradients, no filters.
@@ -147,7 +154,7 @@ It is currently kept at `public/TMF_logo_original.png` for reference.
 | **Tapered-fan tree** | Read as a tulip. Flat-bottomed petal arrangement. |
 | **Laurel wreath with a vertical trunk through it** | The trunk — a straight shaft with a flared base — read as a **sword or torch**. Award/military iconography, wrong for life insurance. Tried three trunk proportions; all had this problem. |
 | **Laurel wreath, hollow, with apex star** | Closest of the attempts and technically sound, but judged not good enough. Currently in the repo as a placeholder. |
-| **Two-tone leaves (lime outer / Mantis inner)** | The tonal difference is invisible below ~48px; it buys nothing and just complicates the file. |
+| **Two-tone leaves (lime outer / Mantis inner)** | The tonal difference is invisible below ~48px; it buys nothing and just complicates the file. Lime is also now held out of the palette's working set. |
 
 **Pattern in the failures:** every literal-plant approach drifted toward a
 generic or unintentionally comic form. Directions not yet explored that may be
@@ -183,16 +190,19 @@ form, which suits the institutional tone and the laurel equity.
 > Explicitly avoid: playful, bouncy, startup-y, illustrative, clip-art,
 > cartoon-rounded, or gradient-heavy treatments. Restraint reads as trustworthy.
 >
-> **Use only this palette:** Midnight Mirage `#001F3F` (primary/base),
-> Nuit Blanche `#1E488F`, Praxeti White `#F6F7ED`, First Colors of Spring
-> `#DBE64C`, Mantis `#74C365`, Picture Book Green `#00804C`.
-> Flat solid fills only — no gradients, bevels, shadows or metallic effects.
+> **Use only this palette, and lead with blue and green:** Midnight Mirage
+> `#001F3F` (primary base), Nuit Blanche `#1E488F`, Praxeti White `#F6F7ED`,
+> Mantis `#74C365`, Picture Book Green `#00804C`. First Colors of Spring
+> `#DBE64C` is a brand colour but is **held in reserve** — it is used nowhere
+> in the interface, and the mark should not lead with it. Flat solid fills
+> only — no gradients, bevels, shadows or metallic effects.
 >
-> **Critical technical constraint:** the lime `#DBE64C` has only **1.3:1**
-> contrast on Praxeti White and is invisible there, and Mantis is only 2.0:1.
-> So deliver **two colourways**: one for navy backgrounds (lime/Mantis mark,
-> Praxeti White wordmark) and one for light backgrounds (navy / Picture Book
-> Green). Also supply solid one-colour navy and knockout-white versions.
+> **Critical technical constraint:** lime `#DBE64C` has only **1.3:1** contrast
+> on Praxeti White and is invisible there; Mantis is only 2.0:1. So deliver
+> **two colourways**: one for navy backgrounds (Mantis / Picture Book Green
+> mark with a Praxeti White wordmark) and one for light backgrounds (navy /
+> Picture Book Green). Also supply solid one-colour navy and knockout-white
+> versions.
 >
 > **The previous logo** was gold: a serif `TMF` monogram framed by two laurel
 > branches, an arch above, an eight-point star at the apex, and `LIFE & LEGACY`

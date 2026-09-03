@@ -10,19 +10,23 @@ import type { Config } from "tailwindcss";
  *
  *  PALETTE — the six brand colors, plus a few derived navy tints for depth:
  *
+ *  The scheme leads with BLUE (ground, structure) and GREEN (every accent).
+ *  Yellow is deliberately held back.
+ *
  *    Midnight Mirage        #001F3F   navy.DEFAULT   primary background
  *    Nuit Blanche           #1E488F   navy.mid       elevated bands
  *    Praxeti White          #F6F7ED   praxeti        primary text / light bg
- *    First Colors of Spring #DBE64C   lime           primary CTA + accents
- *    Mantis                 #74C365   mantis         secondary accent
- *    Picture Book Green     #00804C   mantis.deep    badge SURFACES only
+ *    Mantis                 #74C365   mantis         accent type, icons, borders
+ *    Picture Book Green     #00804C   mantis.deep    primary CTA fill
+ *    First Colors of Spring #DBE64C   lime           held in reserve, unused
  *
  *  ⚠ ACCESSIBILITY — contrast against navy #001F3F:
  *      praxeti  15.7:1  AAA — body copy
- *      lime     12.2:1  AAA — works as text AND as a fill w/ navy text on it
- *      mantis    7.8:1  AA  — icons, checkmarks, small accents
+ *      mantis    7.8:1  AA  — accent type, icons, checkmarks, borders
+ *      lime     12.2:1  AAA — but held in reserve; see note below
  *    mantis.deep (Picture Book Green) is only 3.3:1 on navy and FAILS AA as
- *    text. Use it strictly as a filled surface with praxeti text on it (5.0:1).
+ *    text. It is a FILL only: praxeti on it is 5.0:1, and on mantis.deeper
+ *    (the hover) 6.2:1.
  * ----------------------------------------------------------------------------
  */
 const config: Config = {
@@ -41,14 +45,18 @@ const config: Config = {
           card: "#0A3061", // card surfaces
           mid: "#1E488F", // Nuit Blanche — elevated bands
         },
+        // First Colors of Spring. Retained as a brand colour but deliberately
+        // NOT used in the UI: the scheme leads with blue and green. Reach for
+        // it only for a rare, small highlight — never a fill, border or label.
         lime: {
-          DEFAULT: "#DBE64C", // First Colors of Spring — primary CTA
-          bright: "#E8F06B", // highlights / hover
-          deep: "#C2CE33", // pressed states
+          DEFAULT: "#DBE64C",
+          bright: "#E8F06B",
+          deep: "#C2CE33",
         },
         mantis: {
-          DEFAULT: "#74C365", // secondary accent — icons, checks
-          deep: "#00804C", // Picture Book Green — SURFACES only (see note above)
+          DEFAULT: "#74C365", // Mantis — accent type, icons, checks, borders
+          deep: "#00804C", // Picture Book Green — primary CTA fill (white text)
+          deeper: "#006B40", // CTA hover / pressed — darker keeps white legible
         },
         praxeti: {
           DEFAULT: "#F6F7ED", // Praxeti White — primary light text
@@ -64,8 +72,9 @@ const config: Config = {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"], // body / UI / eyebrows
       },
       boxShadow: {
-        lime: "0 0 0 1px rgba(219,230,76,0.35), 0 10px 40px -12px rgba(219,230,76,0.35)",
-        "lime-soft": "0 8px 30px -12px rgba(219,230,76,0.25)",
+        accent:
+          "0 0 0 1px rgba(116,195,101,0.35), 0 10px 40px -12px rgba(0,128,76,0.45)",
+        "accent-soft": "0 8px 30px -12px rgba(116,195,101,0.28)",
         card: "0 20px 50px -20px rgba(0,10,25,0.7)",
       },
       letterSpacing: {
