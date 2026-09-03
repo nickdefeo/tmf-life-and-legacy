@@ -7,15 +7,19 @@
    Kept here so raw CSS (gradients, glows) can reference the same palette.
    ========================================================================== */
 :root {
-  --black: #0a0a0a;
-  --black-soft: #111111;
-  --black-card: #16140f;
-  --gold: #c9a24b;
-  --gold-bright: #e8c766;
-  --gold-deep: #9a7b2e;
-  --ivory: #f5efe0;
-  --ivory-muted: #c9c2b2;
-  --gold-line: rgba(201, 162, 75, 0.28);
+  --navy: #001f3f; /* Midnight Mirage */
+  --navy-deep: #00152b;
+  --navy-soft: #002a56;
+  --navy-card: #0a3061;
+  --navy-mid: #1e488f; /* Nuit Blanche */
+  --lime: #dbe64c; /* First Colors of Spring */
+  --lime-bright: #e8f06b;
+  --lime-deep: #c2ce33;
+  --mantis: #74c365;
+  --mantis-deep: #00804c; /* Picture Book Green — surfaces only */
+  --praxeti: #f6f7ed; /* Praxeti White */
+  --praxeti-muted: #b0c0d4;
+  --hairline: rgba(116, 195, 101, 0.3);
 }
 
 @layer base {
@@ -26,59 +30,56 @@
   }
 
   body {
-    background-color: var(--black);
-    color: var(--ivory);
+    background-color: var(--navy);
+    color: var(--praxeti);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
   ::selection {
-    background: rgba(201, 162, 75, 0.3);
-    color: var(--ivory);
+    background: rgba(219, 230, 76, 0.3);
+    color: var(--praxeti);
   }
 
-  /* Visible gold focus ring for keyboard users (accessibility) */
+  /* Visible lime focus ring for keyboard users (accessibility) */
   :focus-visible {
-    outline: 2px solid var(--gold-bright);
+    outline: 2px solid var(--lime);
     outline-offset: 2px;
     border-radius: 2px;
   }
 }
 
 @layer components {
-  /* Metallic gold text — used on hero accent words and brand headings */
-  .text-gold-metallic {
-    background: var(--tw-gradient, none);
+  /* Lime→Mantis accent text — hero accent words and brand headings */
+  .text-accent-gradient {
     background-image: linear-gradient(
       135deg,
-      #bf953f 0%,
-      #fcf6ba 35%,
-      #b38728 60%,
-      #fbf5b7 80%,
-      #aa771c 100%
+      #dbe64c 0%,
+      #b8dc55 40%,
+      #74c365 100%
     );
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
-  /* Thin gold hairline divider that echoes the logo's rule lines */
-  .gold-hairline {
+  /* Thin accent hairline divider between sections */
+  .accent-hairline {
     height: 1px;
     width: 100%;
     background: linear-gradient(
       90deg,
       transparent 0%,
-      var(--gold-line) 20%,
-      var(--gold) 50%,
-      var(--gold-line) 80%,
+      var(--hairline) 20%,
+      var(--mantis) 50%,
+      var(--hairline) 80%,
       transparent 100%
     );
   }
 
-  /* Letter-spaced small-caps gold eyebrow label */
+  /* Letter-spaced wide-tracked lime eyebrow label */
   .eyebrow {
-    @apply font-cinzel uppercase text-gold text-xs sm:text-sm tracking-brand;
+    @apply font-sans text-xs font-semibold uppercase tracking-brand text-lime sm:text-sm;
   }
 
   .section-pad {
@@ -90,12 +91,12 @@
   }
 }
 
-/* Faint radial glow used behind the hero logo / dark bands */
+/* Faint green radial glow used behind the hero / dark bands */
 .radial-glow {
   background: radial-gradient(
     ellipse 60% 50% at 50% 35%,
-    rgba(201, 162, 75, 0.12) 0%,
-    rgba(201, 162, 75, 0) 70%
+    rgba(116, 195, 101, 0.14) 0%,
+    rgba(116, 195, 101, 0) 70%
   );
 }
 

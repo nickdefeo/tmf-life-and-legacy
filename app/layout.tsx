@@ -1,17 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Cinzel, Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import Providers from "./Providers";
 import { seo, brand, contact } from "@/data/site-content";
 
 /* ---- Fonts (next/font → CSS variables wired into tailwind.config.ts) ---- */
-const cinzel = Cinzel({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-cinzel",
-  display: "swap",
-});
-
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -43,7 +36,7 @@ export const metadata: Metadata = {
     "insurance careers",
   ],
   alternates: { canonical: seo.siteUrl },
-  icons: { icon: brand.logo.src, apple: brand.logo.src },
+  // Icons come from the file convention: app/icon.svg + app/apple-icon.png
   openGraph: {
     type: "website",
     url: seo.siteUrl,
@@ -61,7 +54,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0A0A0A",
+  themeColor: "#001F3F",
 };
 
 /* ---- JSON-LD structured data for an InsuranceAgency ---- */
@@ -75,15 +68,18 @@ const jsonLd = {
   email: contact.email,
   image: `${seo.siteUrl}${brand.logo.src}`,
   logo: `${seo.siteUrl}${brand.logo.src}`,
+  telephone: contact.phone.display,
   address: {
     "@type": "PostalAddress",
-    streetAddress: contact.address.line1,
     addressLocality: contact.address.city,
     addressRegion: contact.address.state,
-    postalCode: contact.address.zip,
     addressCountry: "US",
   },
-  areaServed: "US",
+  // Only the states the agency is actually licensed in (see contact.licensedStates).
+  areaServed: contact.licensedStates.map((name) => ({
+    "@type": "State",
+    name,
+  })),
 };
 
 export default function RootLayout({
@@ -94,7 +90,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cinzel.variable} ${cormorant.variable} ${inter.variable}`}
+      className={`${cormorant.variable} ${inter.variable}`}
     >
       <body className="font-sans antialiased">
         <script

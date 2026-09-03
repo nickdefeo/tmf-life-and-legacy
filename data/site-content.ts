@@ -27,9 +27,11 @@ export const brand = {
   name: "TMF Life & Legacy",
   shortName: "TMF",
   tagline: "Protecting What Matters Most.",
+  // The on-page logo is drawn by components/ui/Logo.tsx (inline SVG + text).
+  // These fields feed SEO metadata and JSON-LD only.
   logo: {
-    src: "/TMF_logo.png", // ← swap this file in /public to change the logo
-    alt: "TMF Life & Legacy — gold monogram framed by laurel branches",
+    src: "/tmf-mark.svg",
+    alt: "TMF Life & Legacy — green tree mark above the TMF wordmark",
   },
 };
 
@@ -37,20 +39,26 @@ export const brand = {
 //  CONTACT  (one-line swaps)
 // ---------------------------------------------------------------------------
 export const contact = {
-  // Email is the ONLY contact method on the site.
   // Pulled from env when set, otherwise this fallback is used everywhere.
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "admin@tmflife.com",
-  // General info shown in the footer (not a contact action).
-  location: "Serving families nationwide",
+  // Phone — `tel` is the dial string, `display` is what users see.
+  phone: {
+    display: "(954) 588-7723",
+    tel: "+19545887723",
+  },
+  // States the agency is licensed in. Keep this in sync with `stats` and with
+  // the JSON-LD `areaServed` in app/layout.tsx.
+  licensedStates: ["New York", "Florida"],
+  location: "Licensed in New York & Florida",
   // Physical office address.
   address: {
-    line1: "1300 Old Congress Avenue",
-    city: "West Palm Beach",
+    line1: "",
+    city: "Pompano Beach",
     state: "FL",
-    zip: "33409",
-    full: "1300 Old Congress Avenue, West Palm Beach, FL 33409",
+    zip: "",
+    full: "Pompano Beach, FL",
   },
-  hours: "We reply Mon–Fri · 9am–7pm ET",
+  hours: "Mon–Fri · 10am–7pm ET",
 };
 
 // ---------------------------------------------------------------------------
@@ -91,7 +99,7 @@ export const cta = {
 //  HERO
 // ---------------------------------------------------------------------------
 export const hero = {
-  // The headline is split so the middle phrase can render in metallic gold.
+  // The headline is split so the middle phrase can render in the accent gradient.
   headlineLead: "Protecting",
   headlineAccent: "What Matters Most",
   headlineTrail: ".",
@@ -117,12 +125,10 @@ export const hero = {
 //  STATS BAR  (animated count-up)
 // ---------------------------------------------------------------------------
 //  `value` is the number to count to; `prefix`/`suffix` wrap it.
-//  TODO: confirm real figures with the client before launch.
 export const stats = [
-  { value: 12000, prefix: "", suffix: "+", label: "Families Protected" },
-  { value: 25, prefix: "", suffix: "+", label: "Years of Combined Experience" },
-  { value: 30, prefix: "", suffix: "+", label: "A-Rated Carriers" },
-  { value: 100, prefix: "", suffix: "%", label: "Claims-Support Commitment" },
+  { value: 25000, prefix: "", suffix: "+", label: "Families Protected" },
+  { value: 5, prefix: "", suffix: "", label: "Top-Rated Carriers" },
+  { value: 2, prefix: "", suffix: "", label: "States Licensed · NY & FL" },
 ];
 
 // ---------------------------------------------------------------------------
@@ -497,12 +503,18 @@ export const footer = {
     { icon: "Linkedin", label: "LinkedIn", href: "#" },
   ],
   // Legal disclaimers — TODO: have a licensed compliance professional review.
+  // NOTE: the second entry is the IUL-specific disclosure. The site markets
+  // Indexed Universal Life (see `coverage.items`), so this language should not
+  // be removed or shortened without compliance sign-off.
   disclaimers: [
-    "TMF Life & Legacy is an independent insurance agency. Product availability, features, and rates vary by state and are subject to carrier underwriting and approval.",
-    "This website is for general informational purposes only and does not constitute financial, tax, or legal advice. Any quotes provided are estimates and not a guarantee of coverage, eligibility, or pricing.",
-    "Guarantees are based on the claims-paying ability of the issuing insurance carrier. Please consult a licensed professional regarding your specific situation.",
+    "TMF Life & Legacy is a d/b/a of National Life Advisors LLC, a licensed life, accident and health insurance agency. TMF Life & Legacy is an independent insurance agency. Product availability, features, and rates vary by state and are subject to carrier underwriting and approval. Not all products are available in every state.",
+    "Indexed universal life (IUL) insurance is a form of permanent life insurance, not a security or investment product, and cash value is not directly invested in the stock market or any index. Interest credited to policy cash value is subject to caps, participation rates, spreads, and floors set by the issuing carrier, and may vary by policy. Policy loans and withdrawals reduce the death benefit and cash value, may be subject to interest charges, and can cause the policy to lapse if not properly managed, which may result in tax consequences.",
+    "This website is for general informational purposes only and does not constitute financial, tax, or legal advice. Any figures shown are hypothetical illustrations, not a guarantee of coverage, eligibility, performance, or pricing. Please consult a licensed advisor regarding your specific situation before making any purchasing decision.",
+    "Guarantees are based on the claims-paying ability of the issuing insurance carrier.",
   ],
   copyright: "© 2026 TMF Life & Legacy. All rights reserved.",
+  // Shown under the copyright line.
+  licenseNote: "Licensed insurance agency · NPN on file",
 };
 
 // ---------------------------------------------------------------------------
@@ -513,5 +525,5 @@ export const seo = {
   description:
     "Premium life insurance and legacy planning for families. Term, whole, IUL, final expense and mortgage protection from top-rated carriers. Get a free, no-obligation quote—or build your career with TMF.",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://tmflife.com",
-  ogImage: "/TMF_logo.png", // TODO: replace with a 1200×630 social share image.
+  ogImage: "/og.png", // 1200×630 share card (navy + tree lockup)
 };

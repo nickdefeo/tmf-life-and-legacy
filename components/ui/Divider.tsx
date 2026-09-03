@@ -1,8 +1,8 @@
-/** Thin gold hairline divider between sections (echoes the logo's rule lines). */
+/** Thin accent hairline divider between sections (echoes the logo's rule line). */
 export default function Divider() {
   return (
     <div className="container-tmf">
-      <div className="gold-hairline" />
+      <div className="accent-hairline" />
     </div>
   );
 }

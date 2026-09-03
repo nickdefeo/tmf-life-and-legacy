@@ -21,11 +21,11 @@ export default function SectionHeading({
       <div className={centered ? "flex justify-center" : ""}>
         <Eyebrow centered={centered}>{eyebrow}</Eyebrow>
       </div>
-      <h2 className="mt-5 font-cormorant text-4xl font-semibold leading-tight text-ivory sm:text-5xl">
+      <h2 className="mt-5 font-cormorant text-4xl font-semibold leading-tight text-praxeti sm:text-5xl">
         {heading}
       </h2>
       {intro && (
-        <p className="mt-5 text-base leading-relaxed text-ivory-muted sm:text-lg">
+        <p className="mt-5 text-base leading-relaxed text-praxeti-muted sm:text-lg">
           {intro}
         </p>
       )}

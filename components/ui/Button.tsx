@@ -9,14 +9,14 @@ const base =
 const sizes = "px-7 py-3.5 text-sm sm:text-base";
 
 const variants: Record<Variant, string> = {
-  // Gold fill, dark text, soft glow on hover (primary client CTA)
+  // Lime fill, navy text (12.2:1), soft glow on hover (primary client CTA)
   primary:
-    "bg-gold text-black font-semibold hover:bg-gold-bright hover:shadow-gold hover:-translate-y-0.5",
-  // Gold outline on dark (secondary / agent CTA)
+    "bg-lime text-navy font-semibold hover:bg-lime-bright hover:shadow-lime hover:-translate-y-0.5",
+  // Lime outline on navy (secondary / agent CTA)
   secondary:
-    "border border-gold/70 text-gold hover:bg-gold/10 hover:border-gold hover:shadow-gold-soft hover:-translate-y-0.5",
+    "border border-lime/70 text-lime hover:bg-lime/10 hover:border-lime hover:shadow-lime-soft hover:-translate-y-0.5",
   // Quiet text link
-  ghost: "text-ivory-muted hover:text-gold",
+  ghost: "text-praxeti-muted hover:text-lime",
 };
 
 /**

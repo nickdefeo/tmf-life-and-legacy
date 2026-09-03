@@ -5,7 +5,7 @@ import Icon from "@/components/ui/Icon";
 
 export default function WhyTMF() {
   return (
-    <section id="why-tmf" className="section-pad bg-black-soft">
+    <section id="why-tmf" className="section-pad bg-navy-soft">
       <div className="container-tmf">
         <SectionHeading
           eyebrow={whyTmf.eyebrow}
@@ -17,14 +17,14 @@ export default function WhyTMF() {
           {whyTmf.items.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08}>
               <div className="flex gap-5">
-                <span className="mt-1 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-goldline bg-gold/5 text-gold">
+                <span className="mt-1 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-hairline bg-lime/5 text-lime">
                   <Icon name={item.icon} className="h-5 w-5" strokeWidth={1.5} aria-hidden />
                 </span>
                 <div>
-                  <h3 className="font-cormorant text-xl font-semibold text-ivory">
+                  <h3 className="font-cormorant text-xl font-semibold text-praxeti">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ivory-muted">
+                  <p className="mt-2 text-sm leading-relaxed text-praxeti-muted">
                     {item.description}
                   </p>
                 </div>

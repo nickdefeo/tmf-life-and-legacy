@@ -14,7 +14,7 @@ export default function Careers() {
   return (
     <section
       id="careers"
-      className="relative section-pad bg-black"
+      className="relative section-pad bg-navy"
     >
       {/* Subtle top glow to mark the transition into the agent section */}
       <div className="radial-glow pointer-events-none absolute inset-x-0 top-0 h-1/2" aria-hidden />
@@ -26,10 +26,10 @@ export default function Careers() {
             <Eyebrow centered>{careers.eyebrow}</Eyebrow>
           </div>
           <Reveal>
-            <h2 className="mt-5 font-cormorant text-4xl font-semibold leading-tight text-ivory sm:text-5xl">
+            <h2 className="mt-5 font-cormorant text-4xl font-semibold leading-tight text-praxeti sm:text-5xl">
               {careers.heading}
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-ivory-muted sm:text-lg">
+            <p className="mt-5 text-base leading-relaxed text-praxeti-muted sm:text-lg">
               {careers.intro}
             </p>
           </Reveal>
@@ -39,14 +39,14 @@ export default function Careers() {
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {careers.offers.map((offer, i) => (
             <Reveal key={offer.title} delay={i * 0.07}>
-              <div className="flex h-full flex-col rounded-2xl border border-goldline bg-black-card p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-gold hover:shadow-gold-soft">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-goldline bg-gold/5 text-gold">
+              <div className="flex h-full flex-col rounded-2xl border border-hairline bg-navy-card p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-lime hover:shadow-lime-soft">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-hairline bg-lime/5 text-lime">
                   <Icon name={offer.icon} className="h-5 w-5" strokeWidth={1.5} aria-hidden />
                 </span>
-                <h3 className="mt-5 font-cormorant text-xl font-semibold text-ivory">
+                <h3 className="mt-5 font-cormorant text-xl font-semibold text-praxeti">
                   {offer.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ivory-muted">
+                <p className="mt-2 text-sm leading-relaxed text-praxeti-muted">
                   {offer.description}
                 </p>
               </div>
@@ -57,14 +57,14 @@ export default function Careers() {
         {/* Who thrives + Our promise */}
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           <Reveal>
-            <div className="h-full rounded-2xl border border-goldline bg-black-card p-8">
-              <h3 className="font-cormorant text-2xl font-semibold text-ivory">
+            <div className="h-full rounded-2xl border border-hairline bg-navy-card p-8">
+              <h3 className="font-cormorant text-2xl font-semibold text-praxeti">
                 {careers.thrive.heading}
               </h3>
               <ul className="mt-5 space-y-3">
                 {careers.thrive.items.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-ivory-muted">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden />
+                  <li key={item} className="flex items-start gap-3 text-sm text-praxeti-muted">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-lime" aria-hidden />
                     {item}
                   </li>
                 ))}
@@ -73,11 +73,11 @@ export default function Careers() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="flex h-full flex-col justify-center rounded-2xl border border-gold/40 bg-gradient-to-br from-black-card to-black p-8">
-              <h3 className="font-cormorant text-2xl font-semibold text-gold-metallic">
+            <div className="flex h-full flex-col justify-center rounded-2xl border border-lime/40 bg-gradient-to-br from-navy-card to-navy-deep p-8">
+              <h3 className="font-cormorant text-2xl font-semibold text-accent-gradient">
                 {careers.promise.heading}
               </h3>
-              <p className="mt-4 text-base leading-relaxed text-ivory-muted">
+              <p className="mt-4 text-base leading-relaxed text-praxeti-muted">
                 {careers.promise.body}
               </p>
             </div>
@@ -93,7 +93,7 @@ export default function Careers() {
             {/* TODO: wire up a real agent portal before exposing this link. */}
             <Link
               href={careers.agentLoginHref}
-              className="text-sm text-ivory-muted underline-offset-4 transition-colors hover:text-gold hover:underline"
+              className="text-sm text-praxeti-muted underline-offset-4 transition-colors hover:text-lime hover:underline"
             >
               {careers.agentLoginLabel}
             </Link>

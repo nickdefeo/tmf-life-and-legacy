@@ -7,7 +7,7 @@ import Icon from "@/components/ui/Icon";
 
 export default function Coverage() {
   return (
-    <section id="coverage" className="section-pad bg-black">
+    <section id="coverage" className="section-pad bg-navy">
       <div className="container-tmf">
         <SectionHeading
           eyebrow={coverage.eyebrow}
@@ -20,18 +20,18 @@ export default function Coverage() {
             <Reveal key={item.title} delay={i * 0.08}>
               <Link
                 href={cta.quoteHref}
-                className="group flex h-full flex-col rounded-2xl border border-goldline bg-black-card p-8 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-gold hover:shadow-gold-soft"
+                className="group flex h-full flex-col rounded-2xl border border-hairline bg-navy-card p-8 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-lime hover:shadow-lime-soft"
               >
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-goldline bg-gold/5 text-gold transition-colors group-hover:bg-gold/10">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-hairline bg-lime/5 text-lime transition-colors group-hover:bg-lime/10">
                   <Icon name={item.icon} className="h-6 w-6" strokeWidth={1.5} aria-hidden />
                 </span>
-                <h3 className="mt-6 font-cormorant text-2xl font-semibold text-ivory">
+                <h3 className="mt-6 font-cormorant text-2xl font-semibold text-praxeti">
                   {item.title}
                 </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-ivory-muted">
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-praxeti-muted">
                   {item.description}
                 </p>
-                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-gold">
+                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-lime">
                   {coverage.learnMore}
                   <ArrowRight
                     className="h-4 w-4 transition-transform group-hover:translate-x-1"

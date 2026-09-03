@@ -47,25 +47,34 @@ function CountUp({
     return () => cancelAnimationFrame(raf);
   }, [inView, value]);
 
+  // The animated value starts at 0, so the server-rendered markup would read
+  // "0+". Expose the true figure to screen readers and crawlers alongside it.
   return (
     <span ref={ref}>
-      {prefix}
-      {display.toLocaleString()}
-      {suffix}
+      <span aria-hidden>
+        {prefix}
+        {display.toLocaleString()}
+        {suffix}
+      </span>
+      <span className="sr-only">
+        {prefix}
+        {value.toLocaleString()}
+        {suffix}
+      </span>
     </span>
   );
 }
 
 export default function Stats() {
   return (
-    <section className="border-y border-goldline bg-black-soft py-14">
-      <div className="container-tmf grid grid-cols-2 gap-8 lg:grid-cols-4">
+    <section className="border-y border-hairline bg-navy-soft py-14">
+      <div className="container-tmf grid grid-cols-1 gap-8 sm:grid-cols-3">
         {stats.map((stat) => (
           <div key={stat.label} className="text-center">
-            <div className="font-cinzel text-4xl font-bold text-gold-metallic sm:text-5xl">
+            <div className="font-cormorant text-5xl font-semibold text-accent-gradient sm:text-6xl">
               <CountUp value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
             </div>
-            <div className="mt-2 text-xs uppercase tracking-wider text-ivory-muted sm:text-sm">
+            <div className="mt-2 text-xs uppercase tracking-wider text-praxeti-muted sm:text-sm">
               {stat.label}
             </div>
           </div>

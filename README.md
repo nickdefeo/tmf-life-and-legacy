@@ -1,6 +1,8 @@
 # TMF Life & Legacy — Website
 
-A premium, single-scroll marketing site for **TMF Life & Legacy** — _"Protecting What Matters Most."_ Black-and-gold, editorial-luxury design, built to serve two audiences: **families looking for coverage** and **prospective agents** exploring a career.
+A premium, single-scroll marketing site for **TMF Life & Legacy** — _"Protecting What Matters Most."_ Deep-navy and lime-green editorial design, built to serve two audiences: **families looking for coverage** and **prospective agents** exploring a career.
+
+> The earlier black-and-gold version is preserved at tag `v1-black-gold` / branch `backup/v1-black-gold`. To compare or revert: `git checkout v1-black-gold`.
 
 Built with **Next.js (App Router) + TypeScript + Tailwind CSS + Framer Motion + lucide-react**. No backend required. Deploys to Vercel out of the box.
 
@@ -41,8 +43,8 @@ Every push to your main branch redeploys automatically.
 | I want to change…                | Edit this file                                            |
 | -------------------------------- | --------------------------------------------------------- |
 | **Any text, stat, product, testimonial, FAQ, nav link, CTA label** | **`data/site-content.ts`** ← start here for almost everything |
-| **Phone number / email / hours** | `data/site-content.ts` → `contact`                        |
-| **The logo**                     | replace `public/TMF_logo.png` (keep the filename, or update `brand.logo.src`) |
+| **Phone / email / address / licensed states** | `data/site-content.ts` → `contact`           |
+| **The logo**                     | `components/ui/Logo.tsx` (inline SVG tree + Cormorant wordmark) — see DESIGN.md §6 |
 | **Colors, fonts, shadows**       | `tailwind.config.ts` (mirrored in `app/globals.css`)      |
 | **Contact email**                | `data/site-content.ts` → `contact.email` (or `NEXT_PUBLIC_CONTACT_EMAIL`) |
 | **SEO title / description / OG** | `data/site-content.ts` → `seo`                            |
@@ -78,7 +80,12 @@ components/
 data/
   site-content.ts   ← ALL editable copy & data
 public/
-  TMF_logo.png      the logo
+  tmf-mark.svg      the tree mark, standalone
+  og.png            1200x630 social share card
+  TMF_logo*.png     the retired gold logo (kept for reference; unreferenced)
+app/
+  icon.svg          favicon (navy tile + tree)
+  apple-icon.png    180x180 touch icon
 DESIGN.md           the design system (tokens, scale, components)
 tailwind.config.ts  theme tokens (colors, fonts, shadows)
 .env.example        environment variables template
@@ -90,20 +97,23 @@ tailwind.config.ts  theme tokens (colors, fonts, shadows)
 
 These are marked with `TODO:` in the code (mostly in `data/site-content.ts`):
 
-- [ ] Confirm the **contact email** (`contact.email`) and **service area / hours**.
-- [ ] Replace placeholder **stats** with real, verifiable figures.
+- [ ] Confirm the **contact email** (`contact.email`) and **hours**.
+- [ ] Confirm the **licensed states** (`contact.licensedStates`) — these drive the
+      "2 States Licensed" stat, the footer, and the JSON-LD `areaServed`. The site
+      no longer claims nationwide service.
 - [ ] Replace placeholder **testimonials** (client + agent) with real, approved quotes.
 - [ ] Replace **earnings language** in Careers + FAQ with **compliance-approved** wording (no income guarantees).
 - [ ] Have a **licensed compliance professional review** all disclaimers and insurance copy.
 - [ ] Add real **social media URLs** (or remove unused ones) in `footer.socials`.
 - [ ] Wire up the **agent login** link (`careers.agentLoginHref`).
-- [ ] Add a proper **1200×630 social share image** (`seo.ogImage`) — currently uses the logo.
 - [ ] (Optional / later) Add a real **contact form** if email-only isn't enough.
 
 ---
 
 ## Notes on the design system
 
-`DESIGN.md` is the source of truth for the visual language. It was authored from the TMF brand spec (the `designmd` integration was unavailable during the build — see the note at the top of that file). Brand palette, type scale, and component patterns all live there and are mirrored in `tailwind.config.ts`.
+`DESIGN.md` is the source of truth for the visual language — brand palette, contrast rules, type scale, component patterns and logo construction. Colors are mirrored in `tailwind.config.ts` and `app/globals.css`; change them in both.
 
-Accessibility: WCAG-AA contrast (ivory ~16:1 and gold ~7.4:1 on black), keyboard-navigable nav/accordion/form, visible gold focus rings, ARIA labels on icon controls, and full `prefers-reduced-motion` support.
+Accessibility: WCAG-AA contrast (Praxeti White ~15.7:1 and lime ~12.2:1 on navy), keyboard-navigable nav/accordion, visible lime focus rings, ARIA labels on icon controls, and full `prefers-reduced-motion` support.
+
+⚠️ One palette trap worth knowing: **Picture Book Green `#00804C` is only 3.3:1 on navy and fails AA as text.** Use it as a filled surface with light text on it, never as green type on the navy. DESIGN.md §1 has the full contrast table.

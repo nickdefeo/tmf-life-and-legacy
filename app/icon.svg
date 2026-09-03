@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="TMF Life &amp; Legacy">
+  <rect width="100" height="100" rx="20" fill="#001F3F"/>
+  <g transform="translate(9.00 1.37) scale(0.8200)">
+    <g fill="#74C365">
+      <ellipse cx="50.00" cy="48.00" rx="18.50" ry="20.50"/>
+      <ellipse cx="50.00" cy="27.00" rx="10.00" ry="10.00"/>
+      <ellipse cx="59.00" cy="29.81" rx="10.00" ry="10.00"/>
+      <ellipse cx="65.59" cy="37.50" rx="10.00" ry="10.00"/>
+      <ellipse cx="68.00" cy="48.00" rx="10.00" ry="10.00"/>
+      <ellipse cx="65.59" cy="58.50" rx="10.00" ry="10.00"/>
+      <ellipse cx="59.00" cy="66.19" rx="10.00" ry="10.00"/>
+      <ellipse cx="50.00" cy="69.00" rx="10.00" ry="10.00"/>
+      <ellipse cx="41.00" cy="66.19" rx="10.00" ry="10.00"/>
+      <ellipse cx="34.41" cy="58.50" rx="10.00" ry="10.00"/>
+      <ellipse cx="32.00" cy="48.00" rx="10.00" ry="10.00"/>
+      <ellipse cx="34.41" cy="37.50" rx="10.00" ry="10.00"/>
+      <ellipse cx="41.00" cy="29.81" rx="10.00" ry="10.00"/>
+    </g>
+    <g fill="#DBE64C">
+      <ellipse cx="50.00" cy="43.00" rx="18.50" ry="20.50"/>
+      <ellipse cx="50.00" cy="22.00" rx="10.00" ry="10.00"/>
+      <ellipse cx="59.00" cy="24.81" rx="10.00" ry="10.00"/>
+      <ellipse cx="65.59" cy="32.50" rx="10.00" ry="10.00"/>
+      <ellipse cx="68.00" cy="43.00" rx="10.00" ry="10.00"/>
+      <ellipse cx="65.59" cy="53.50" rx="10.00" ry="10.00"/>
+      <ellipse cx="59.00" cy="61.19" rx="10.00" ry="10.00"/>
+      <ellipse cx="50.00" cy="64.00" rx="10.00" ry="10.00"/>
+      <ellipse cx="41.00" cy="61.19" rx="10.00" ry="10.00"/>
+      <ellipse cx="34.41" cy="53.50" rx="10.00" ry="10.00"/>
+      <ellipse cx="32.00" cy="43.00" rx="10.00" ry="10.00"/>
+      <ellipse cx="34.41" cy="32.50" rx="10.00" ry="10.00"/>
+      <ellipse cx="41.00" cy="24.81" rx="10.00" ry="10.00"/>
+    </g>
+    <path d="M45.60 60.00 L54.40 60.00 C54.70 75.00 55.20 86.00 55.40 98.00 L44.60 98.00 C44.80 86.00 45.30 75.00 45.60 60.00 Z" fill="#F6F7ED"/>
+    <path d="M50.00 96.00 C50.00 102.50 43.25 104.70 35.00 105.00" stroke="#F6F7ED" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+    <path d="M50.00 96.00 C50.00 102.50 56.75 104.70 65.00 105.00" stroke="#F6F7ED" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>

@@ -1,17 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
-import { brand, navLinks, cta } from "@/data/site-content";
+import { Menu, X, Phone } from "lucide-react";
+import { brand, navLinks, cta, contact } from "@/data/site-content";
 import Button from "@/components/ui/Button";
+import Logo from "@/components/ui/Logo";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  // Solidify the header (bg + gold hairline) once the user scrolls past the hero top.
+  // Solidify the header (bg + accent hairline) once the user scrolls past the hero top.
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
@@ -31,21 +31,18 @@ export default function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-goldline bg-black-soft/95 backdrop-blur-md"
+          ? "border-b border-hairline bg-navy-soft/95 backdrop-blur-md"
           : "border-b border-transparent bg-transparent"
       }`}
     >
       <div className="container-tmf flex h-28 items-center justify-between">
-        {/* Logo (the mark already includes the wordmark, so no text beside it) */}
-        <Link href="#top" className="flex items-center" aria-label={brand.name}>
-          <Image
-            src={brand.logo.src}
-            alt={brand.logo.alt}
-            width={750}
-            height={463}
-            className="h-16 w-auto sm:h-[84px]"
-            priority
-          />
+        {/* Logo — tree mark + Cormorant wordmark (see components/ui/Logo.tsx) */}
+        <Link
+          href="#top"
+          className="flex items-center text-praxeti"
+          aria-label={brand.name}
+        >
+          <Logo size="md" />
         </Link>
 
         {/* Desktop nav */}
@@ -57,17 +54,24 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="group relative whitespace-nowrap text-[13px] text-ivory-muted transition-colors hover:text-ivory xl:text-sm"
+              className="group relative whitespace-nowrap text-[13px] text-praxeti-muted transition-colors hover:text-praxeti xl:text-sm"
             >
               {link.label}
-              {/* Animated gold underline */}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
+              {/* Animated lime underline */}
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-lime transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </nav>
 
         {/* Desktop actions */}
         <div className="hidden items-center gap-2.5 lg:flex">
+          <a
+            href={`tel:${contact.phone.tel}`}
+            className="mr-1 inline-flex items-center gap-2 whitespace-nowrap text-[13px] font-medium text-praxeti transition-colors hover:text-lime"
+          >
+            <Phone className="h-4 w-4 text-lime" aria-hidden />
+            {contact.phone.display}
+          </a>
           <Button
             href={cta.joinHref}
             variant="secondary"
@@ -86,7 +90,7 @@ export default function Header() {
 
         {/* Mobile menu button */}
         <button
-          className="text-ivory lg:hidden"
+          className="text-praxeti lg:hidden"
           onClick={() => setOpen(true)}
           aria-label="Open menu"
           aria-expanded={open}
@@ -102,31 +106,31 @@ export default function Header() {
       >
         {/* Backdrop */}
         <div
-          className={`absolute inset-0 bg-black/70 transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-navy-deep/80 transition-opacity duration-300 ${
             open ? "opacity-100" : "opacity-0"
           }`}
           onClick={() => setOpen(false)}
         />
         {/* Panel */}
         <div
-          className={`absolute right-0 top-0 flex h-full w-[82%] max-w-sm flex-col border-l border-goldline bg-black-soft p-6 shadow-card transition-transform duration-300 ${
+          className={`absolute right-0 top-0 flex h-full w-[82%] max-w-sm flex-col border-l border-hairline bg-navy-soft p-6 shadow-card transition-transform duration-300 ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <div className="flex items-center justify-between">
-            <span className="font-cinzel text-sm tracking-[0.2em] text-gold">
+            <span className="font-sans text-sm font-semibold tracking-[0.2em] text-lime">
               TMF LIFE &amp; LEGACY
             </span>
             <button
               onClick={() => setOpen(false)}
               aria-label="Close menu"
-              className="text-ivory"
+              className="text-praxeti"
             >
               <X className="h-6 w-6" />
             </button>
           </div>
 
-          <div className="gold-hairline my-6" />
+          <div className="accent-hairline my-6" />
 
           <nav className="flex flex-col gap-1" aria-label="Mobile">
             {navLinks.map((link) => (
@@ -134,7 +138,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-base text-ivory-muted transition-colors hover:bg-gold/10 hover:text-gold"
+                className="rounded-lg px-3 py-3 text-base text-praxeti-muted transition-colors hover:bg-lime/10 hover:text-lime"
               >
                 {link.label}
               </Link>
@@ -142,6 +146,14 @@ export default function Header() {
           </nav>
 
           <div className="mt-auto flex flex-col gap-3 pt-6">
+            <a
+              href={`tel:${contact.phone.tel}`}
+              onClick={() => setOpen(false)}
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-hairline px-7 py-3.5 text-sm font-medium text-praxeti transition-colors hover:border-lime hover:text-lime"
+            >
+              <Phone className="h-4 w-4 text-lime" aria-hidden />
+              {contact.phone.display}
+            </a>
             <Button
               href={cta.joinHref}
               variant="secondary"
