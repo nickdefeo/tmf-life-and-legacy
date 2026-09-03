@@ -44,7 +44,7 @@ Every push to your main branch redeploys automatically.
 | -------------------------------- | --------------------------------------------------------- |
 | **Any text, stat, product, testimonial, FAQ, nav link, CTA label** | **`data/site-content.ts`** ← start here for almost everything |
 | **Phone / email / address / licensed states** | `data/site-content.ts` → `contact`           |
-| **The logo**                     | `components/ui/Logo.tsx` (inline SVG tree + Cormorant wordmark) — see DESIGN.md §6 |
+| **The logo**                     | `components/ui/Logo.tsx` (inline SVG laurel wreath + Cormorant wordmark) — see DESIGN.md §6 |
 | **Colors, fonts, shadows**       | `tailwind.config.ts` (mirrored in `app/globals.css`)      |
 | **Contact email**                | `data/site-content.ts` → `contact.email` (or `NEXT_PUBLIC_CONTACT_EMAIL`) |
 | **SEO title / description / OG** | `data/site-content.ts` → `seo`                            |
@@ -80,11 +80,11 @@ components/
 data/
   site-content.ts   ← ALL editable copy & data
 public/
-  tmf-mark.svg      the tree mark, standalone
+  tmf-mark.svg      the laurel mark, standalone
   og.png            1200x630 social share card
   TMF_logo*.png     the retired gold logo (kept for reference; unreferenced)
 app/
-  icon.svg          favicon (navy tile + tree)
+  icon.svg          favicon (navy tile + compact wreath)
   apple-icon.png    180x180 touch icon
 DESIGN.md           the design system (tokens, scale, components)
 tailwind.config.ts  theme tokens (colors, fonts, shadows)

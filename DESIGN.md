@@ -118,25 +118,53 @@ Measured against `navy` `#001F3F`:
 
 ## 6. Logo & motifs
 
-The mark is a **tree** — roots, trunk, canopy — for legacy, growth and
-generations. It lives in `components/ui/Logo.tsx`:
+The mark is a **hollow laurel wreath crowned by a four-point star**. It carries
+the vocabulary of the retired gold mark — laurel, star, arch — into the new
+palette. Laurel means honour and legacy, which is the brand; a generic tree
+does not.
 
-- The tree is **inline SVG** (~2KB): a lime crown built from overlapping
-  ellipses for an organic scalloped edge, painted twice with a 5px vertical
-  offset so `mantis` survives only as a shadow rim along the bottom (a crown
-  lit from above, from one shape definition).
-- The trunk and roots use **`currentColor`**, so the lockup adapts to context:
-  wrap in `text-praxeti` on navy, `text-navy` on light.
-- The **`TMF` wordmark is real text** in Cormorant Garamond, not traced
-  outlines — same webfont as the headlines, and it stays selectable.
-- `Logo` renders the full vertical lockup (tree / TMF / rule / LIFE & LEGACY);
-  `TmfMark` renders the tree alone for tight spaces.
+It lives in `components/ui/Logo.tsx`:
 
-Standalone assets, all generated from the same geometry:
-`public/tmf-mark.svg` (tree), `app/icon.svg` (favicon — navy rounded tile so
-it reads on any tab colour), `app/apple-icon.png` (180×180),
-`public/og.png` (1200×630 share card).
+- Two laurel branches sweep up and inward from a shared base. Leaves ride each
+  stem at angles derived from the curve's **tangent**, so spacing stays even
+  and the sweep reads as growth rather than a fan. Leaf length tapers toward
+  the apex.
+- **No trunk inside the wreath.** A vertical shaft with a flared base reads as
+  a sword or torch — award/military iconography, wrong for life insurance. The
+  original gold mark framed the *TMF letters*, not a tree.
+- Emitted as real SVG **béziers** — each leaf is two cubic segments, each stem
+  one stroked cubic. 19 elements, ~2.4KB, small enough to inline and still
+  hand-editable.
 
-Echo the mark throughout: **leaf/canopy curves**, **thin green rule lines**,
-and a very faint green radial glow (`.radial-glow`) behind the hero and on
-dark CTA bands. Keep lime as an accent, never a flood.
+Two **densities**, because a scaled-down full mark turns to mush below ~32px:
+
+| `detail`  | Leaves/side | Use            |
+| --------- | ----------- | -------------- |
+| `full`    | 8           | Display sizes  |
+| `compact` | 5, heavier  | Favicon, ≤32px |
+
+Two **tones** — this one is not optional:
+
+| `tone`  | Colors        | Background     |
+| ------- | ------------- | -------------- |
+| `light` | lime + mantis | navy           |
+| `dark`  | navy + green  | Praxeti White  |
+
+⚠️ **Lime on Praxeti White is 1.3:1** — the wreath would effectively disappear.
+Any placement on a light section must pass `tone="dark"`.
+
+`Logo` renders the full vertical lockup (wreath / TMF / rule / LIFE & LEGACY);
+`TmfMark` renders the wreath alone. The **`TMF` wordmark is real text** in
+Cormorant Garamond, not traced outlines — same webfont as the headlines, and
+it stays selectable. Lockup text uses `currentColor`, so wrap in
+`text-praxeti` on navy or `text-navy` on light, and pass the matching `tone`.
+
+Standalone assets, all generated from the same control points:
+`public/tmf-mark.svg` (wreath), `app/icon.svg` (favicon — compact wreath on a
+navy rounded tile so it reads on any tab colour), `app/apple-icon.png`
+(180×180), `public/og.png` (1200×630 share card).
+
+Echo the mark throughout: **laurel leaf curves**, the **four-point star** as a
+small accent, **thin green rule lines**, and a very faint green radial glow
+(`.radial-glow`) behind the hero and on dark CTA bands. Keep lime as an accent,
+never a flood.
