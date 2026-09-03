@@ -39,7 +39,7 @@ export default function About() {
           {/* Pull quote / tagline echo */}
           <Reveal delay={0.2}>
             <div className="mt-8 border-l-2 border-lime pl-5">
-              <p className="font-cormorant text-2xl italic text-accent-gradient">
+              <p className="font-cormorant text-2xl italic text-mantis">
                 {about.pullQuote}
               </p>
             </div>

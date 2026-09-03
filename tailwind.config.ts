@@ -68,13 +68,6 @@ const config: Config = {
         "lime-soft": "0 8px 30px -12px rgba(219,230,76,0.25)",
         card: "0 20px 50px -20px rgba(0,10,25,0.7)",
       },
-      backgroundImage: {
-        // Accent gradient for hero words and brand headings (bg-clip-text).
-        "accent-gradient":
-          "linear-gradient(135deg,#DBE64C 0%,#B8DC55 40%,#74C365 100%)",
-        "lime-sheen":
-          "linear-gradient(135deg,#DBE64C 0%,#E8F06B 50%,#C2CE33 100%)",
-      },
       letterSpacing: {
         brand: "0.22em", // wide-tracked sans eyebrows
       },

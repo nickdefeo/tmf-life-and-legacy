@@ -32,7 +32,7 @@ export default function ContactForm() {
             {/* Email address (clickable) */}
             <a
               href={mailto}
-              className="mt-6 block font-cormorant text-2xl font-semibold text-accent-gradient transition-opacity hover:opacity-90 sm:text-3xl"
+              className="mt-6 block font-cormorant text-2xl font-semibold text-mantis transition-opacity hover:opacity-90 sm:text-3xl"
             >
               {contact.email}
             </a>

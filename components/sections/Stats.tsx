@@ -71,7 +71,7 @@ export default function Stats() {
       <div className="container-tmf grid grid-cols-1 gap-8 sm:grid-cols-3">
         {stats.map((stat) => (
           <div key={stat.label} className="text-center">
-            <div className="font-cormorant text-5xl font-semibold text-accent-gradient sm:text-6xl">
+            <div className="font-cormorant text-5xl font-semibold text-mantis sm:text-6xl">
               <CountUp value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
             </div>
             <div className="mt-2 text-xs uppercase tracking-wider text-praxeti-muted sm:text-sm">

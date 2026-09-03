@@ -1,10 +1,13 @@
 # DESIGN.md — TMF Life & Legacy
 
-A deep-navy, editorial system with a lime-green accent. Navy for trust,
-permanence and calm; lime as a high-energy accent for every call to action;
-Mantis green for the quieter supporting marks. Generous negative space,
-high-contrast serif display type, thin green hairline rules that echo the
-logo's baseline rule.
+A deep-navy, editorial system with restrained green accents. Navy for trust,
+permanence and calm; solid Mantis green for emphasis in type; lime reserved for
+calls to action. Generous negative space, high-contrast serif display type,
+thin green hairline rules.
+
+**Tone: sober, not playful.** This is a life insurance agency. No gradients in
+type, no decorative flourishes, no more than one accent colour in a given
+block. Restraint reads as trustworthy.
 
 > **Revision history:** the site previously used a black-and-gold palette with
 > Cinzel display caps. That version is preserved at the git tag
@@ -27,16 +30,17 @@ The six brand colors, plus a few derived navy tints for depth.
 | Nuit Blanche           | `navy-mid`     | `#1E488F`               | Elevated bands, mid-tone surfaces    |
 | Praxeti White          | `praxeti`      | `#F6F7ED`               | Primary light text, light sections   |
 | —                      | `praxeti-muted`| `#B0C0D4`               | Secondary text on navy               |
-| First Colors of Spring | `lime`         | `#DBE64C`               | Primary CTA fill, accent words       |
+| First Colors of Spring | `lime`         | `#DBE64C`               | CTA fill + borders only — not type   |
 | —                      | `lime-bright`  | `#E8F06B`               | Hover / highlight                    |
 | —                      | `lime-deep`    | `#C2CE33`               | Pressed states                       |
-| Mantis                 | `mantis`       | `#74C365`               | Secondary accent — icons, checkmarks |
+| Mantis                 | `mantis`       | `#74C365`               | **Accent type**, icons, checkmarks   |
 | Picture Book Green     | `mantis-deep`  | `#00804C`               | Badge/pill **surfaces only**         |
 | —                      | `hairline`     | `rgba(116,195,101,0.30)`| Hairline dividers / card borders     |
 
-**Accent gradient** (hero accent words, brand headings) — apply with
-`.text-accent-gradient` / `bg-accent-gradient`:
-`linear-gradient(135deg,#DBE64C 0%,#B8DC55 40%,#74C365 100%)`
+**No gradients in type.** Accent words, stat numerals and step numbers are
+**solid `mantis` `#74C365`**. An earlier revision used a lime→mantis gradient
+on text; it read playful, which is wrong for a life insurance agency. Solid
+only. `lime` is reserved for CTA fills and small UI accents.
 
 ### Contrast — read this before using green as text
 
@@ -106,6 +110,7 @@ Measured against `navy` `#001F3F`:
 
 ## 5. Motion
 
+- Keep motion minimal and quiet; nothing bouncy or elastic.
 - Scroll-reveal: fade + 16px upward translate, staggered ~80ms across grid items.
 - Header: transparent over hero → solid `navy-soft` + hairline border after
   ~24px scroll.

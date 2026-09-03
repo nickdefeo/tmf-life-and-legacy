@@ -18,7 +18,7 @@ export default function HowItWorks() {
             {howItWorks.steps.map((step, i) => (
               <Reveal key={step.title} delay={i * 0.12}>
                 <li className="relative flex flex-col items-center text-center lg:items-start lg:text-left">
-                  <span className="relative z-10 inline-flex h-14 w-14 items-center justify-center rounded-full border border-lime bg-navy-card font-cormorant text-2xl font-semibold text-accent-gradient shadow-lime-soft">
+                  <span className="relative z-10 inline-flex h-14 w-14 items-center justify-center rounded-full border border-lime bg-navy-card font-cormorant text-2xl font-semibold text-mantis shadow-lime-soft">
                     {i + 1}
                   </span>
                   <h3 className="mt-6 font-cormorant text-2xl font-semibold text-praxeti">

@@ -73,8 +73,8 @@ export default function Careers() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="flex h-full flex-col justify-center rounded-2xl border border-lime/40 bg-gradient-to-br from-navy-card to-navy-deep p-8">
-              <h3 className="font-cormorant text-2xl font-semibold text-accent-gradient">
+            <div className="flex h-full flex-col justify-center rounded-2xl border border-lime/40 bg-navy-card p-8">
+              <h3 className="font-cormorant text-2xl font-semibold text-mantis">
                 {careers.promise.heading}
               </h3>
               <p className="mt-4 text-base leading-relaxed text-praxeti-muted">

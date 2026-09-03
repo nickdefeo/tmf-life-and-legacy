@@ -28,7 +28,7 @@ export default function Hero() {
           className="max-w-4xl font-cormorant text-5xl font-semibold leading-[1.05] text-praxeti sm:text-6xl lg:text-7xl"
         >
           {hero.headlineLead}{" "}
-          <span className="text-accent-gradient">{hero.headlineAccent}</span>
+          <span className="text-mantis">{hero.headlineAccent}</span>
           {hero.headlineTrail}
         </motion.h1>
 
