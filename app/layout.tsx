@@ -71,8 +71,10 @@ const jsonLd = {
   telephone: contact.phone.display,
   address: {
     "@type": "PostalAddress",
+    streetAddress: contact.address.line1,
     addressLocality: contact.address.city,
     addressRegion: contact.address.state,
+    postalCode: contact.address.zip,
     addressCountry: "US",
   },
   // Only the states the agency is actually licensed in (see contact.licensedStates).

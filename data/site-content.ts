@@ -56,11 +56,11 @@ export const contact = {
   location: "Licensed in New York & Florida",
   // Physical office address.
   address: {
-    line1: "",
+    line1: "878 SW 12th Avenue",
     city: "Pompano Beach",
     state: "FL",
-    zip: "",
-    full: "Pompano Beach, FL",
+    zip: "33069",
+    full: "878 SW 12th Avenue, Pompano Beach, FL 33069",
   },
   hours: "Mon–Fri · 10am–7pm ET",
 };
